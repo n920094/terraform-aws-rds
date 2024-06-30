@@ -15,7 +15,9 @@ variable "db_password" {
 }
 
 #No-Code Demo 
+/*
 variable "db_encrypted" {
   description = "Encrypt the database storage"
   type = bool
 }
+*/
