@@ -16,7 +16,6 @@ variable "db_password" {
 
 variable "db_instance_class" {
   description = "RDS instance class"
-  type   = list
 }
 
 #No-Code Demo 
