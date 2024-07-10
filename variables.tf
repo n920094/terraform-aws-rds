@@ -14,9 +14,14 @@ variable "db_password" {
   sensitive   = true
 }
 
+variable "db_instance_class" {
+  description = "RDS instance class"
+  sensitive   = true
+}
+
 #No-Code Demo 
 
 variable "db_encrypted" {
   description = "Encrypt the database storage"
-  type = bool
+  type        = bool
 }

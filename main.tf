@@ -67,7 +67,7 @@ resource "aws_db_parameter_group" "education" {
 
 resource "aws_db_instance" "education" {
   identifier             = "${var.db_name}-${random_pet.random.id}"
-  instance_class         = "db.t3.micro"
+  instance_class         = var.instance_class
   allocated_storage      = 5
   engine                 = "postgres"
   engine_version         = "15.6"
@@ -79,5 +79,5 @@ resource "aws_db_instance" "education" {
   publicly_accessible    = true
   skip_final_snapshot    = true
   ## No-Code Demo
-  storage_encrypted      = var.db_encrypted
+  storage_encrypted = var.db_encrypted
 }
