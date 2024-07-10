@@ -16,7 +16,7 @@ variable "db_password" {
 
 variable "db_instance_class" {
   description = "RDS instance class"
-  sensitive   = true
+  type   = list
 }
 
 #No-Code Demo 
