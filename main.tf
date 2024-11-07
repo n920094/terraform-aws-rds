@@ -40,7 +40,8 @@ resource "aws_security_group" "rds" {
     from_port   = 5432
     to_port     = 5432
     protocol    = "tcp"
-    cidr_blocks = ["192.80.0.0/16"]
+  #  cidr_blocks = ["192.80.0.0/16"]
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   egress {
@@ -67,7 +68,7 @@ resource "aws_db_parameter_group" "education" {
 
 resource "aws_db_instance" "education" {
   identifier             = "${var.db_name}-${random_pet.random.id}"
-  instance_class         = var.instance_class
+  instance_class         = "db.t3.micro"
   allocated_storage      = 5
   engine                 = "postgres"
   engine_version         = "15.6"
