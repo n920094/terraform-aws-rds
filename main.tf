@@ -40,7 +40,11 @@ resource "aws_security_group" "rds" {
     from_port   = 5432
     to_port     = 5432
     protocol    = "tcp"
+<<<<<<< HEAD
   #  cidr_blocks = ["192.80.0.0/16"]
+=======
+    #cidr_blocks = ["192.80.0.0/16"]
+>>>>>>> 226e7d688c570fe0b50e7a3f467cd5eaae3903ca
     cidr_blocks = ["0.0.0.0/0"]
   }
 
@@ -68,7 +72,11 @@ resource "aws_db_parameter_group" "education" {
 
 resource "aws_db_instance" "education" {
   identifier             = "${var.db_name}-${random_pet.random.id}"
+<<<<<<< HEAD
   instance_class         = "db.t3.micro"
+=======
+  instance_class         = var.db_instance_class
+>>>>>>> 226e7d688c570fe0b50e7a3f467cd5eaae3903ca
   allocated_storage      = 5
   engine                 = "postgres"
   engine_version         = "15.6"
@@ -79,6 +87,6 @@ resource "aws_db_instance" "education" {
   parameter_group_name   = aws_db_parameter_group.education.name
   publicly_accessible    = true
   skip_final_snapshot    = true
-  ## No-Code Demo
+  ### No-Code Demo
   storage_encrypted = var.db_encrypted
 }
