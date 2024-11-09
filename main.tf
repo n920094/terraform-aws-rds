@@ -3,7 +3,8 @@
 # No-Code Demo
 
 provider "aws" {
-  region = "us-east-2"
+ # region = "us-east-2"
+  region = "ap-northeast-1"
 }
 
 provider "random" {}
