@@ -42,8 +42,8 @@ resource "aws_security_group" "rds" {
     to_port   = 5432
     protocol  = "tcp"
     ### Policy Check Demo ##
-    #cidr_blocks = ["192.80.0.0/16"]
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = ["192.80.0.0/16"]
+    #cidr_blocks = ["0.0.0.0/0"]
   }
 
   egress {
