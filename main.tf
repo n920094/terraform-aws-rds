@@ -3,7 +3,6 @@
 # No-Code Demo
 
 provider "aws" {
- # region = "us-east-2"
   region = "ap-northeast-1"
 }
 
@@ -39,12 +38,12 @@ resource "aws_security_group" "rds" {
   vpc_id = module.vpc.vpc_id
 
   ingress {
-    from_port   = 5432
-    to_port     = 5432
-    protocol    = "tcp"
+    from_port = 5432
+    to_port   = 5432
+    protocol  = "tcp"
     ### Policy Check Demo ##
-    cidr_blocks = ["192.80.0.0/16"]
-    #cidr_blocks = ["0.0.0.0/0"]
+    #cidr_blocks = ["192.80.0.0/16"]
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   egress {
