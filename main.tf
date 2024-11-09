@@ -83,4 +83,7 @@ resource "aws_db_instance" "education" {
   skip_final_snapshot    = true
   ### No-Code Demo
   storage_encrypted = var.db_encrypted
+  tags = {
+    Name = "TF-DB"
+  }
 }
